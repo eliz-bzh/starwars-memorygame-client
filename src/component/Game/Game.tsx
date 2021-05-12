@@ -139,7 +139,7 @@ export const Game = () => {
                                         src={character.url}
                                         alt="Swar Wars Character"
                                         onError={(e: any) => { e.target.src = 'https://starwars-visualguide.com/assets/img/placeholder.jpg'; e.target.onError = null; }}
-                                        width="100"
+                                        width="70%"
                                     />
                                 </div>
                                 <div className="back"></div>
