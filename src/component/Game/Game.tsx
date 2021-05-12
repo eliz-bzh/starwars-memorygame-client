@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import './Game.css';
+import { useState, useEffect } from 'react';
 import { fillArray, shuffleAndConcat, charactersList } from '../../services/services';
 import { LoginForm } from '../LoginForm/LoginForm';
 import { Result } from '../Result/Result';

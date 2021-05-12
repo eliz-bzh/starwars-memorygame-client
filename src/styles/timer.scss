@@ -1,0 +1,25 @@
+.app-header {
+	align-items: flex-end;
+	h1 {
+		flex-grow: 1;
+	}
+	h2 {
+		font-size: 1rem;
+		color: grey;
+	}
+}
+@media screen and (max-width: 576px) {
+	h1 {
+		font-size: 20px;
+	}
+}
+@media screen and (min-width: 576px) {
+	h1 {
+		font-size: 30px;
+	}
+}
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 40px;
+	}
+}

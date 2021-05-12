@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import './Timer.css';
+import React, { useEffect } from 'react';
 
 interface Props {
     start: boolean,
