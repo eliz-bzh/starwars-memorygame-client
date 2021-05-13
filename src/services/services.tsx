@@ -16,7 +16,6 @@ export const fillArray = (size: number): number[] => {
 }
 
 export const shuffleAndConcat = (array: number[]): number[] => {
-    console.log(array);
     const defaultArray = [...array];//copy array
     var currentIndex = array.length, temporaryValue, randomIndex;
 

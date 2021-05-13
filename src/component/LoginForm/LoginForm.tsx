@@ -3,6 +3,8 @@ import { Modal, Row, Col, Form, Button } from 'react-bootstrap';
 import { createBrowserHistory } from 'history';
 import axios from 'axios';
 import { SelectGame } from './SelectTypeGame';
+import { useDispatch } from 'react-redux';
+import { changeTypeGame } from '../../redux/actions/actionGame';
 
 interface Props {
     show: boolean,
@@ -15,6 +17,7 @@ export const LoginForm = ({ show, handleClick, selectGame, user }: Props) => {
     const [userName, setUserName] = useState('');
     const [game, setGame] = useState(6);
     let gameName = (game === 6) ? ("Easy") : (game === 8) ? ("Medium") : ("Difficult");
+    const dispatch = useDispatch();
 
     const update = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setUserName(event.target.value);
@@ -41,6 +44,7 @@ export const LoginForm = ({ show, handleClick, selectGame, user }: Props) => {
         handleClick(!show);
         selectGame(game);
         user(userName, gameName);
+        dispatch(changeTypeGame(gameName));
         const customHistory = createBrowserHistory();
         customHistory.go(1);
     }

@@ -5,9 +5,9 @@
     body {
         min-height: 100vh;
         display: flex;
+        margin-top: 10px;
         justify-content: center;
         align-items: center;
-        padding: 50px;
         line-height: 1;
         font-family: "Patrick Hand", sans-serif;
         @media (max-width: 367px){
@@ -118,4 +118,30 @@ p {
 	height: 100%;
 	transform-style: preserve-3d;
 	transition: 0.6s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+}
+
+@media screen {
+    .static-window {
+        padding: 1rem;
+        width: 270px;
+        background-color: #3535352d;
+        border-radius: 10px;
+        text-align: center;
+        @media (max-width: 576px){
+            width: 170px;
+            font-size: 10px;
+        }
+        @media (min-width: 576px){
+            width: 200px;
+            font-size: 12px;
+        }
+        @media (min-width: 768px){
+            width: 240px;
+            font-size: 15px;
+        }
+        @media (min-width: 992px){
+            width: 270px;
+            font-size: 16px;
+        }
+    }
 }

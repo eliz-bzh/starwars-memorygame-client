@@ -4,6 +4,9 @@ import { LoginForm } from '../LoginForm/LoginForm';
 import { Result } from '../Result/Result';
 import { Timer } from '../Timer/Timer';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { changeTypeGame } from '../../redux/actions/actionGame';
+
 
 export const Game = () => {
 
@@ -18,6 +21,7 @@ export const Game = () => {
     const [minutes, setMinutes] = useState(1);
     const [seconds, setSeconds] = useState(0);
     const [user, setUser] = useState<{ userName: string, game: string }>({ userName: '', game: '' });
+    const dispatch = useDispatch();
 
     function flipCard(index: number) {
         setOpenedCard((opened: any) => [...opened, index]);
@@ -109,7 +113,11 @@ export const Game = () => {
             score: userScore,
             game: user.game
         }).then(res => {
+            dispatch(changeTypeGame(''));
             console.log(res.data);
+            setTimeout(() => {
+                dispatch(changeTypeGame(user.game))
+            }, 1000);
         })
     }
 

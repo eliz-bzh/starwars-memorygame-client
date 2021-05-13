@@ -13,6 +13,7 @@ export const Result = ({ show, changeForm, closeForm, user }: Props) => {
 
     const [score, setScore] = useState(0);
 
+
     useEffect(() => {
         if (show) {
             axios.get(`https://starwars-memorygame-server.herokuapp.com/api/user/${user.userName}/${user.game}`)
@@ -24,7 +25,6 @@ export const Result = ({ show, changeForm, closeForm, user }: Props) => {
 
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        console.log('button!!!');
         closeForm(!show);
     }
 
